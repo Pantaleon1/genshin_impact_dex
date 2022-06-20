@@ -33,12 +33,14 @@ function App() {
       });
     }
     else{
-      setGenshinState({
-        ...genshinState,
+      setGenshinState({types:
+        [...genshinState.types], 
         [item]:respJson,
       });
+      
     }
 
+    
   };
 
   useEffect(() => {
@@ -47,7 +49,6 @@ function App() {
   }, []); 
   
 
-  
   const handleChangeType = ({target}) => {
     const url= `https://api.genshin.dev/${target.value}`;
     fetchGenshinApi(target.value, url);
